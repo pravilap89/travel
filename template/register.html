@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        label
+        {
+        display:block;
+        float:left;
+        clear:both;
+
+        }
+        input{
+        float:left;
+        clear:right;
+        }
+        .head{
+        color:Blue;
+        font-weight:bold
+        }
+        *{
+        padding:5px;
+
+        }
+        .form{
+            background-color:yellow;
+            display:block;
+            width:50%;
+            height:100%;
+            float:left;
+<!--            clear:both;-->
+        }
+    </style>
+</head>
+<body>
+<div >
+    <h1>User Registration</h1>
+    <h3>{% for msg in messages %}
+    {{msg}}
+    {% endfor %}</h3>
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <table  class="form">
+            <tbody>
+            <tr>
+                <td><label class="head">Username</label></td>
+                <td><input type="text" name="username"/></td>
+            </tr>
+            <tr>
+                <td><label class="head" for="first_name">First Name</label></td>
+                <td><input type="text" id="first_name" name="first_name"/></td>
+            </tr>
+            <tr>
+                <td><label class="head" for="last_name">Last Name</label></td>
+                <td><input type="text" id="last_name" name="last_name"/></td>
+            </tr>
+            <tr>
+                <td><label class="head" for="email">Email Id</label></td>
+                <td><input type="email" id="email" name="email"/></td>
+            </tr>
+            <tr>
+                <td><label class="head" for="password">Password</label></td>
+                <td><input type="password" id="password" name="password"/></td>
+            </tr>
+            <tr>
+                <td><label class="head" for="password1">Confirm Password</label></td>
+                <td><input type="password" id="password1" name="password1"/></td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="submit" value="Submit" style="clear:left">
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </form>
+
+
+</div>
+</body>
+</html>
